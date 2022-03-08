@@ -1,0 +1,20 @@
+[package]
+name = "{{project-name}}"
+version = "0.0.1"
+authors = ["{{authors}}"]
+edition = "2021"
+
+
+[profile.min]
+inherits = "release"
+opt-level = "z"
+strip = true
+
+[profile.release]
+codegen-units = 1
+opt-level = 3
+panic = "abort"
+lto = true
+
+
+[dependencies]
